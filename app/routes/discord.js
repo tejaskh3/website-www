@@ -3,6 +3,7 @@ import { APPS } from '../constants/urls';
 import { inject as service } from '@ember/service';
 import redirectAuth from '../utils/redirect-auth';
 import { TOAST_OPTIONS } from '../constants/toast-options';
+import fetch from 'fetch';
 
 export default class DiscordRoute extends Route {
   @service router;
