@@ -13,25 +13,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: true
-
-      - name: Verify pnpm installation
-        run: |
-          echo "Checking pnpm version..."
-          pnpm --version
+          node-version: 18.19.1
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
+
+      - name: Install ember-cli globally
+        run: npm install -g ember-cli
 
       - name: Run tests with coverage
-        run: pnpm run test:coverage
+        run: COVERAGE=true ember test
 
       - name: Post coverage comment
         uses: romeovs/lcov-reporter-action@v0.3.1
