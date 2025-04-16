@@ -27,7 +27,7 @@
     "start": "ember serve",
     "test": "concurrently \"pnpm:lint\" \"pnpm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test",
-    "test:coverage": "COVERAGE=true ember test"
+    "test:coverage": "COVERAGE=true ember test",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
