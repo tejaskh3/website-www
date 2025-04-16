@@ -4,6 +4,7 @@ import { TOAST_OPTIONS } from '../constants/toast-options';
 import redirectAuth from '../utils/redirect-auth';
 import { SELF_USER_PROFILE_URL } from '../constants/apis';
 import { ERROR_MESSAGES } from '../constants/error-messages';
+import fetch from 'fetch';
 
 export default class MobileRoute extends Route {
   @service toast;
