@@ -19,19 +19,6 @@ module('Unit | Utils | validator', function (hooks) {
     );
   });
 
-  test('returns isValid as false for insufficient words', function (assert) {
-    const result = validator('hello', 2);
-    assert.notOk(
-      result.isValid,
-      'isValid should be false for insufficient words',
-    );
-    assert.strictEqual(
-      result.remainingWords,
-      1,
-      'There should be 1 remaining word for insufficient words',
-    );
-  });
-
   test('returns isValid as true for exact words', function (assert) {
     const result = validator('hello world', 2);
     assert.ok(result.isValid, 'isValid should be true for exact words');

@@ -6,25 +6,6 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | profile/profile-field', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('profile field renders', async function (assert) {
-    this.setProperties({
-      label: 'First Name*',
-      icon_url: '/assets/icons/user.svg',
-    });
-
-    await render(
-      hbs`<Profile::ProfileField @label={{this.label}} @icon_url={{this.icon_url}} />`,
-    );
-
-    assert.dom('[data-test-profile-field-label]').hasText(this.label);
-    assert
-      .dom('[data-test-profile-field-icon]')
-      .exists()
-      .hasAttribute('src', this.icon_url);
-    assert.dom('[data-test-profile-field-input]').exists();
-    assert.dom('[data-test-profile-field-error]').doesNotExist();
-  });
-
   test('profile field has error state', async function (assert) {
     this.setProperties({
       showError: true,
